@@ -1,5 +1,6 @@
 package com.bits.scalable.api.hotel.room.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -15,7 +16,12 @@ import lombok.Setter;
 @Builder
 @AllArgsConstructor
 public class RoomType {
-    private String name;
+    @JsonProperty("type")
+    private String type;
+
+    @JsonProperty("price")
     private double price;
-    private int availabilityCount;
+
+    @JsonProperty("availability")
+    private int availability;
 }

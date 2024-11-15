@@ -24,10 +24,8 @@ public class RoomController {
         this.roomService = roomService;
     }
 
-    // Initial API for creating room without room types
     @PostMapping("/add")
     public Room addRoom(@RequestBody RoomRequestDTO roomRequestDTO) {
-        // Handle optional roomType in the request body
         return roomService.addRoom(roomRequestDTO.getHotelId(), roomRequestDTO.getRoomType());
     }
 
